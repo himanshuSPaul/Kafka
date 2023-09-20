@@ -19,8 +19,6 @@ Create Kafka Topic
 --topic kafka-demo-topic \
 --replication-factor 1 \
 --partitions 1 
-
-
 ```
 
 
