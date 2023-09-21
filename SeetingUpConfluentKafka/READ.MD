@@ -1,10 +1,58 @@
 # Install Confluent Kafka Cluster In Windows 10
 
-## Step 1 : Check if WSL Is available  
-![Image](/Screenshots/1.PNG)
+## Pre-requsite  
+
+##### Verify if WSL is installed :
+```
+wsl --version
+wsl --list
+wsl --status
+```
+![Image](/Screenshots/checkIfWSLIsInstalled.PNG)
+
+If WSL is not installed then follow <https://learn.microsoft.com/en-us/windows/wsl/setup/environment>
+
+
+#### Verify if java is installed :
+Check if Java is installed or not by running ```java -version``` :
+![Image](/Screenshots/javaVersion.PNG)
+
+
+If Java is not install, then run ```sudo apt install default-jdk``` to install Java  :
+![Image](/Screenshots/installJava.PNG)
 
 
 ## Step 2: Get Confluent Kafka Binaries
+
+Go to <https://www.confluent.io/get-started/?product=self-managed>
+ , fill all the required details and click on **`Start Free`**
+![Image](/Screenshots/GetKafkaBinaries-1.PNG)
+
+In next page, Click on **`Download`** button next to **`TAR`** under **`Local`** section as below:
+![Image](/Screenshots/GetKafkaBinaries-2.PNG)
+
+Then it will download the file into **`Download`** directory of local file system :
+![Image](/Screenshots/GetKafkaBinaries-3.PNG)
+Now file is available in local file system:
+![Image](/Screenshots/GetKafkaBinaries-4.PNG)
+
+***Note***
+
+Curently confluent binary file (i.e .tar file) is available in `C:\Users\DELL\Downloads\`  path of Windows file system. Same path can be accessed using wsl in `/mnt/c/Users/Dell/Downloads` path.
+
+
+Extract confluent .tar file into WSL user home directory :
+To Go User home direcory  : cd ~
+To Extract .tar file in current directory:  
+` tar -zxvf <path of .tar file> `
+
+For example :
+```tar -zxvf /mnt/c/Users/Dell/Downloads/confluent-7.5.0.tar```
+![Image](/Screenshots/extractConfluentBinaries.PNG)
+
+After extraction it should create below direcory staructure inside user home directory :
+![Image](/Screenshots/AfterExtractedBinaries.PNG)
+
 
 
 ## Starting & Verifying Services
@@ -12,7 +60,7 @@
 
 ```bash
 confluent local services kafka start
-``````
+```
 ![Image](/Screenshots/startKafka.PNG)
 
 
