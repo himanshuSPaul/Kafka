@@ -54,6 +54,9 @@ For example :
 After extraction it should create below directory structure  inside user home directory :
 ![Image](/Asset/Screenshots/SeetingUpConfluentKafka/AfterExtractedBinaries.PNG)
 
+Here is the descriptions of those folder:
+![Image](/Asset/Screenshots/SeetingUpConfluentKafka/KafkaFolderDetails.PNG)
+
 
 ### Updating Kafka Configuration
 
