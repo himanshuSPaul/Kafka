@@ -50,8 +50,31 @@ For example :
 ```tar -zxvf /mnt/c/Users/Dell/Downloads/confluent-7.5.0.tar```
 ![Image](/Screenshots/extractConfluentBinaries.PNG)
 
-After extraction it should create below direcory staructure inside user home directory :
+After extraction it should create below directory structure  inside user home directory :
 ![Image](/Screenshots/AfterExtractedBinaries.PNG)
+
+
+```
+nano ~/.profile
+``````
+![Image](/Screenshots/updateProfile.PNG)
+
+Add confluent parent installation directory to **`CONFLUENT_HOME`** variable and bin directory of confluent to syetem **`PATH`** variable as below :
+```
+export CONFLUENT_HOME=/home/ubuntu/confluent_kafka/confluent-7.5.0
+export PATH=$PATH:$CONFLUENT_HOME/bin
+```
+
+![Image](/Screenshots/updateProfile2.PNG)
+
+After adding , we need to source the file to effect changes
+```
+source ~/.profile
+``````
+
+Update Kafka `server.properties` file inside `etc/kafka/` directory of `$CONFLUENT_HOME` directory 
+
+![Image](/Screenshots/UpdatingKafkaSrverConfiguration.PNG)
 
 
 
