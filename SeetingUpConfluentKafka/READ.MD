@@ -54,6 +54,8 @@ After extraction it should create below directory structure  inside user home di
 ![Image](/Screenshots/AfterExtractedBinaries.PNG)
 
 
+### Updating Kafka Configuration
+
 ```
 nano ~/.profile
 ``````
@@ -78,15 +80,16 @@ Update Kafka `server.properties` file inside `etc/kafka/` directory of `$CONFLUE
 
 
 
-## Starting & Verifying Services
+## Starting & Verifying Kafka Services
 
+Starting Kafka Services
 
 ```bash
 confluent local services kafka start
 ```
 ![Image](/Screenshots/startKafka.PNG)
 
-
+Checking Kafka Services Status
 
 ```bash
 confluent local services kafka status
@@ -101,42 +104,41 @@ confluent local services kafka status
 
 ## Working WIth Kafka
 
-### Create Kafka Topic 
+Creating Kafka Topic 
 
 ```
-        ./kafka-topics --create \
-        --bootstrap-server localhost:9092 \
-        --topic kafka-demo-topic \
-        --replication-factor 1 \
-        --partitions 1 
+./kafka-topics --create \
+--bootstrap-server localhost:9092 \
+--topic kafka-demo-topic \
+--replication-factor 1 \
+--partitions 1 
 ```
 ![Image](/Screenshots/createTopic1.PNG)
 
-### Publish Messages to Kafka Topic using `kafka-console-producer`
+Publish Messages to Kafka Topic using `kafka-console-producer`
 ```
-        ./kafka-console-producer \
-          --topic kafka-demo-topic \
-          --bootstrap-server localhost:9092
+./kafka-console-producer \
+--topic kafka-demo-topic \
+--bootstrap-server localhost:9092
 ```
 ![Image](/Screenshots/kafkaConsoleProducer.PNG)
 
 
-### Verify Published Messages using `kafka-console-consumer`
+Verify Published Messages using `kafka-console-consumer`
 ```
-        ./kafka-console-consumer \
-          --topic kafka-demo-topic \
-          --bootstrap-server localhost:9092
+./kafka-console-consumer \
+--topic kafka-demo-topic \
+--bootstrap-server localhost:9092
 ```
 ![Image](/Screenshots/kafkaConsoleConsumer.PNG)
 
-### Kafka Messages present In Kafka Topic Can also be seen using Confluent Control Center UI Page
+Kafka Messages present In Kafka Topic Can also be seen using Confluent Control Center UI Page
 
 ![Image](/Screenshots/KafkaTopicUI.PNG)
 
 ![Image](/Screenshots/KafkaTopicUI-2.PNG)
 
-### Bringing All three console into same screen:
-
+Bringing All three console into same screen:
 ![Image](/Screenshots/allTogether.PNG)
 
 
