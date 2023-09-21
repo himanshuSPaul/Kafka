@@ -23,7 +23,7 @@ If Java is not install, then run ```sudo apt install default-jdk``` to install J
 ![Image](/Asset/Screenshots/SeetingUpConfluentKafka/installJava.PNG)
 
 
-## Step 2: Get Confluent Kafka Binaries
+### Get Confluent Kafka Binaries
 
 Go to <https://www.confluent.io/get-started/?product=self-managed>
  , fill all the required details and click on **`Start Free`**
@@ -81,7 +81,7 @@ Update Kafka `server.properties` file inside `etc/kafka/` directory of `$CONFLUE
 
 
 
-## Starting & Verifying Kafka Services
+## Starting Kafka Cluster
 
 Starting Kafka Services
 
@@ -97,15 +97,15 @@ confluent local services kafka status
 ``````
 ![Image](/Asset/Screenshots/SeetingUpConfluentKafka/ShowKafkaServicesStatus.PNG)
 
+Once all required services are up, **`Confluent Control Center`** will be available in  <localhost:9021/cluster>  as below :
+
+![Image](/Asset/Screenshots/SeetingUpConfluentKafka/KafkaClusterUI.PNG)
 
 
 
+## Working With Kafka
 
-
-
-## Working WIth Kafka
-
-Creating Kafka Topic 
+Creating Kafka Topic
 
 ```
 ./kafka-topics --create \
@@ -144,7 +144,7 @@ Bringing All three console into same screen:
 
 
 
-### Shot down Kafka Services
+### Shutdown Kafka Services
 ```bash
 confluent local services stop
 ```
