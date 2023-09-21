@@ -1,6 +1,6 @@
 # Install Confluent Kafka Cluster In Windows 10
 
-## Pre-requsite  
+## Pre-requsite   
 
 ##### Verify if WSL is installed :
 ```
